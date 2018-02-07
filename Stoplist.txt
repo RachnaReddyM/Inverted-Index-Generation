@@ -1,0 +1,107 @@
+Below are the 50 most frequent words with their term frequencies:
+
+the -------------> 151669
+of -------------> 77091
+and -------------> 59638
+in -------------> 51209
+to -------------> 40407
+a -------------> 39236
+is -------------> 26814
+as -------------> 18856
+by -------------> 14841
+are -------------> 13570
+for -------------> 13448
+that -------------> 13056
+with -------------> 12736
+on -------------> 12728
+from -------------> 11454
+or -------------> 10294
+was -------------> 10036
+s -------------> 9227
+edit -------------> 8937
+it -------------> 8867
+at -------------> 7996
+be -------------> 7880
+which -------------> 7659
+an -------------> 7534
+this -------------> 6771
+can -------------> 5616
+have -------------> 5537
+also -------------> 5526
+were -------------> 5107
+has -------------> 5071
+its -------------> 4770
+such -------------> 4163
+other -------------> 4121
+not -------------> 4094
+water -------------> 4039
+than -------------> 3919
+more -------------> 3884
+most -------------> 3838
+their -------------> 3747
+they -------------> 3585
+tropical -------------> 3577
+but -------------> 3550
+one -------------> 3539
+when -------------> 3521
+air -------------> 3410
+into -------------> 3406
+been -------------> 3364
+may -------------> 3356
+over -------------> 3284
+these -------------> 3226
+
+
+Stopword lists are non information bearing words. The above terms are the 50 most frequent words of the corpus. 
+Keeping track of these highly frequent words in a waste of disk space. 
+Also, these words rarely contribute any meaning to the document relevance. 
+So these words can be easily excluded from the inverted index. 
+However, there are few words like "water", "tropical", "air" etc which are among the top 
+frequent occuring words, but they hold releavnce to documents. These cannot be excluded from the inverted index out right. 
+So when a stopword list is created based on the term frequency, a manual observation is also required.
+
+Therefore, to include the relevant terms like "water", "tropical" and "air" in the inverted index, my stopword list would be as below:
+
+1. the
+2. of 
+3. and
+4. in 
+5. to
+3. a 
+4. is
+5. as
+6. by
+7. are
+8. for
+9. that
+10. with
+11. on 
+12. from
+13. or 
+14. was
+15. s
+16. edit
+17. it
+18. at
+19. be 
+20. which
+21. an 
+22. this
+23. can 
+24. have
+25. also
+26. were
+27. has 
+28. its 
+29. such
+30. other
+31. not 
+32. water
+33. than 
+34. more 
+35. most 
+36. their
+37. they 
+
+A cut-off frequency of around 4000 can be set, and then cross checked with the inverted index always, just so that we dont miss out on relevant terms.
+With a cut-off frequency of 4000, words like "tropical", "water", "air" etc can be excluded from the stopword list.
